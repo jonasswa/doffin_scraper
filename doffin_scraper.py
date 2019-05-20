@@ -21,7 +21,8 @@ def _get_html(address: str, query: dict = {})\
     return page
 
 
-def _formatpubdate(date):
+def _formatpubdate(date: str)\
+        -> str:
     # convert a yyyymmddhhmmss (UTC) string to RSS pubDate format
     from calendar import weekday, month_abbr, day_abbr
     year, month, day = date[:4], date[4:6], date[6:8]
@@ -37,7 +38,8 @@ def _formatpubdate(date):
         day_abbr[wday], day, month_abbr[int(month)], year)
 
 
-def get_rss_doffin(search_string: str):
+def get_rss_doffin(search_string: str)\
+        -> str:
     
     url = 'https://doffin.no/Notice?'
     search_string = search_string.replace(' ', '+')
