@@ -43,7 +43,7 @@ def get_rss_doffin(search_string: str)\
     
     url = 'https://doffin.no/Notice?'
     search_string = search_string.replace(' ', '+')
-    print(search_string)
+
     query = {
         'Query': search_string,
         'OrderingType': 1,
@@ -102,8 +102,10 @@ def get_rss_doffin(search_string: str)\
         rss+='</item>\n'
 
     rss+='\n</channel>\n</rss>'
+    
+    return rss
 
 
 if __name__ == '__main__':
-    get_rss_doffin('test')
+    print(get_rss_doffin('test'))
 
